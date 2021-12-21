@@ -8,6 +8,7 @@ h1, .stats {
 
 .monster {
   display: inline-block;
+  vertical-align: top;
   background-image: url("../img/paper.jpg");
   background-size: 650px;
   margin: 0.1in;
