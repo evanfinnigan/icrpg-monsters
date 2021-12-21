@@ -4,9 +4,9 @@ function random(list) {
 }
 
 function generateName() {
-  var adjective = ["", "Angry", "Insane", "Great", "Hideous", "Huge", "Tiny", "Sneaky", "Ferocious", "Scary", "Strange", "Fiery", "Undying", "Unholy", "Red", "Green", "Yellow", "Blue", "Dark", "Grey", "Toxic", "Poisonous", "Venomous", "Mysterious"]
-  var noun = ["Beast", "Abomination", "Giant", "Ooze", "Slime", "Spider", "Skeleton", "Zombie", "Demon", "Devil", "Ghost", "Stranger", "Monster", "Horror"]
-  var suffix = ["", "From Below", "Of the Wilds", "From Above", "Of Doom", "Of the Sea", "Of the Desert", "Of the Sky", "From Outer Space", "From Hell", "Of the Wasteland", "Of the Swamp"]
+  var adjective = ["","","","","Horrifying", "Angry", "Insane", "Great", "Hideous", "Huge", "Tiny", "Sneaky", "Ferocious", "Scary", "Strange", "Fiery", "Undying", "Unholy", "Red", "Green", "Yellow", "Blue", "Dark", "Grey", "Toxic", "Poisonous", "Venomous", "Mysterious", "Flying", "Infected", "Diseased", "Stinging", "Killer"]
+  var noun = ["Beast", "Abomination", "Giant", "Ooze", "Slime", "Spider", "Skeleton", "Zombie", "Demon", "Devil", "Ghost", "Stranger", "Monster", "Horror", "Creature", "Swarm"]
+  var suffix = ["","","","", "From Below", "Of the Wilds", "From the Frozen Depths", "Of the Mountains", "Of the Lake", "Of the Haunted Lands", "Of Destruction", "From Above", "Of Doom", "Of the Sea", "Of the Desert", "Of the Sky", "From Outer Space", "From Hell", "Of the Wasteland", "Of the Swamp"]
 
   return `The ${random(adjective)} ${random(noun)} ${random(suffix)}`.toUpperCase()
 }
@@ -152,17 +152,17 @@ function createMonster() {
   var hearts = "❤".repeat(Math.floor(1 + Math.random() * 4))
   var monster = `
   <div class="monster">
-      <h1>${monster_name}</h1>
-      <div class="hearts">${hearts}</div>
-      <p class="stats">${stats}</p>
-      <hr>
-      ${abilities}
-      <br>
-      <hr>
-      <p class="lore"><em>${monster_lore}</em></p>
-    </div>
+    <h1>${monster_name}</h1>
+    <div class="hearts">${hearts}</div>
+    <p class="stats">${stats}</p>
+    <hr>
+    ${abilities}
+    <br>
+    <hr>
+    <p class="lore"><em>${monster_lore}</em></p>
+  </div>
   `
-  document.getElementById("generated").innerHTML += monster
+  document.getElementById("generated").innerHTML = monster + document.getElementById("generated").innerHTML
 }
 
 function clearAll() {
