@@ -168,3 +168,5 @@ function createMonster() {
 function clearAll() {
   document.getElementById("generated").innerHTML = ""
 }
+
+generate()
